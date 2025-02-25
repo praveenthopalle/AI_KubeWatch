@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: AI-kubewatch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: AI-kubewatch
+  template:
+    metadata:
+      labels:
+        app: AI-kubewatch
+    spec:
+      containers:
+        - name: AI-kubewatch
+          image: your-acr-name.azurecr.io/AI-kubewatch:latest  # Replace with your Docker image
+          ports:
+            - containerPort: 80  # Adjust the port based on your application
+      imagePullSecrets:
+        - name: acr-secret  # If using Azure Container Registry, replace with your image pull secret

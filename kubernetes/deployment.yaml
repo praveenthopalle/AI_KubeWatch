@@ -16,6 +16,6 @@ spec:
         - name: AI-kubewatch
           image: your-acr-name.azurecr.io/AI-kubewatch:latest  # Replace with your Docker image
           ports:
-            - containerPort: 80  # Adjust the port based on your application
+            - containerPort: 8000  # Adjust the port based on your application
       imagePullSecrets:
-        - name: acr-secret  # If using Azure Container Registry, replace with your image pull secret
+        - name: myregistry.azurecr.io/samples/nginx  # If using Azure Container Registry, replace with your image pull secret
